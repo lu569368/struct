@@ -1,0 +1,34 @@
+{{define "index.html"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书籍列表</title>
+</head>
+<tbody>
+
+<div><a href="/new">添加新书</a></div>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>名称</th>
+        <th>作者</th>
+        <th>封面</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range .ce}}
+    <tr>
+        <td>{{.ID}}</td>
+        <td>{{.Name}}</td>
+        <td>{{.Author}}</td>
+        <td>{{.Srcurl}}</td>
+        <td><a href="/delete?id={{.ID}}}">删除</a></td>
+    </tr>
+    {{end}}
+    </tbody>
+</table>
+</html>
+{{end}}
